@@ -1,0 +1,1 @@
+For components that are specific to a particular page, create a new directory that is same as the name of the page and then create components inside it. Make sure to export it using the index.js of the current directory.
