@@ -1,0 +1,400 @@
+@use "../_partials/mixins" as *;
+@use "../_partials/variables" as *;
+
+.MainContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    > * {
+        display: flex;
+    }
+}
+
+.TopContent {
+    display: flex;
+}
+
+button {
+    cursor: pointer;
+}
+
+.HeroSection {
+    .TopContent > .LeftSideContent {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        .SiteHeadingOne {
+            @include HeadingOneTypography;
+            color: $BrightGray;
+        }
+        .SiteHeroParagraph {
+            @include BodyTypography;
+            color: $BrightGray;
+        }
+        .Buttons {
+            display: flex;
+            gap: 30px;
+            .CTAButton {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 3px;
+                height: 60px;
+                width: 225.25px;
+                border-radius: 30px;
+                outline: none;
+                border: none;
+                background-color: $DeepKoamaru;
+                @include CTAButtonTypography;
+            }
+            .SellNFTsCTAButton {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 3px;
+                height: 60px;
+                width: 225.25px;
+                border-radius: 30px;
+                outline: none;
+                border: 1px solid $MiddleBlueGreen;
+                background-color: transparent;
+                @include CTAButtonTypography;
+            }
+        }
+    }
+    .TrustedPartnersContent {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 30px 0;
+        
+        .TrustedPartnersTitle {
+            @include BodyTypography;
+            color: $BrightGray;
+        }
+    }
+    @keyframes slide {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-120%);
+        }
+    }
+    
+    .logos {
+        overflow: hidden;
+        padding: 20px 0;
+        white-space: nowrap;
+        position: relative;
+    }
+    .logos:hover .logos-slide {
+        animation-play-state: paused;
+    }
+    
+    .logos-slide {
+        display: inline-block;
+        animation: 35s slide infinite linear;
+    }
+    
+    .logos-slide img {
+        filter: brightness(0) invert(1);
+        display: inline-block;
+        height: 30px;
+        margin: 0 40px;
+    }
+    .TopContent > .RightSideContent > .RightSideImg {
+        height: 100%;
+        width: 100%;
+    }
+    .TopContent > .RightSideContent > .RightSideImg > .animation1{
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.Info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.PricingButton,
+.SellButton,
+.AppButton,
+.CTAButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    height: 60px;
+    width: 225.25px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    background-color: $DeepKoamaru;
+    @include CTAButtonTypography;
+}
+
+h2 {
+    @include HeadingTwoTypography;
+    color: $BrightGray;
+}
+
+.SubtitleContent {
+    @include SubHeadingTypography;
+    color: $BrightGray;
+}
+
+.AnalyticsContent,
+.AppContent,
+.SellContent {
+    @include BodyTypography;
+    color: $BrightGray;
+}
+
+.LeftSideContent,
+.RightSideContent {
+    flex: 1 1 0px;
+}
+
+.TestimonialSection {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
+}
+
+.CTASection {
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.AnalyticsImg,
+.AppImg,
+.SellImg {
+    margin: 20px 0;
+    border-radius: 15px;
+    // background: linear-gradient(0deg, #31296433, #31296433); //Original-Color(Dark-grey) of design
+    // filter: brightness(70%);
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.AnalyticsSection,
+.AppSection,
+.SellSection {
+    align-items: center;
+}
+
+.AccentColor {
+    color: $MiddleBlueGreen;
+}
+
+.BackgroundBlurObject1 {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    left: -162px;
+    top: -486px;
+    background: $DeepKoamaru;
+    opacity: 0.7;
+    filter: blur(70.5px);
+    z-index: -1;
+}
+
+//  .BackgroundBlurObject2 {
+//     position: absolute;
+//     width: 350px;
+//     height: 350px;
+//     right: 0;
+//     top: 597px;
+//     background: $MiddleBlueGreen;
+//     opacity: 0.5;
+//     filter: blur(77px);
+// }
+
+// .BackgroundBlurObject2 {
+//     position: absolute;
+//     top: 367px;
+//     right: 0;
+//     filter: hue-rotate(160deg);
+//     // background: $DeepKoamaru;
+//     // filter: blur(77px);
+// }
+
+.BackgroundBlurObject3{
+    position: fixed;
+    width: 338px;
+    height: 220px;
+    // left: -162px;
+    right: 0    ;
+    bottom: 0;
+    background: $MiddleBlueGreen2;
+    opacity: 0.7;
+    filter: blur(90.5px);
+    z-index: -1;
+}
+
+
+.img_main{
+    animation: move4 5s infinite linear;
+}
+.image {
+    position: relative;
+}
+.image .icon {
+    position: absolute;
+}
+.image .icon.icon1 {
+    top: 34%;
+    right: -58px;
+}
+.image .icon.icon1 img {
+    width: 100%;
+    height: 100%;
+    -webkit-animation: move5 5s infinite linear;
+}
+.image .icon.icon2 {
+    top: 24%;
+    left: 20%;
+}
+.icon2 img{
+    width: 100%;
+    height: 100%;
+    width: fit-content;
+    -webkit-animation: move3 5s infinite linear;
+}
+.image .icon.icon3 {
+    bottom: -20px;
+    left: -40px;
+}
+.icon3 img{
+    width: 100%;
+    height: 100%;
+    width: fit-content;
+    -webkit-animation: move5 5s infinite linear;
+}
+
+.img_slider{
+    position: relative;
+}
+.img_slider_div{
+    display: flex;
+    width: max-content;
+    height: max-content;
+    overflow: hidden;
+}
+.rocket{
+    width: 75%;
+    -webkit-animation: move6 5s infinite linear normal forwards;
+}
+.man{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    // height: inherit;
+    max-height: 100%;
+}
+
+@keyframes move3 {
+    0% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+  }
+  50% {
+    -webkit-transform: translate(20%);
+    transform: translate(20%);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+@keyframes move2 {
+    0% {
+        -webkit-transform: rotate(1deg) translate(2px, 2px);
+        transform: rotate(1deg) translate(2px, 2px);
+    }
+    50% {
+        -webkit-transform: rotate(-1deg) translate(-2px, -2px);
+        transform: rotate(-1deg) translate(-2px, -2px);
+    }
+    100% {
+        -webkit-transform: rotate(1deg) translate(2px, 2px);
+        transform: rotate(1deg) translate(2px, 2px);
+    }
+}
+
+@keyframes move4 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+    50% {
+        -webkit-transform: translate(-10%);
+        transform: translate(-10%);
+    }
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+@keyframes move5 {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-20%);
+        transform: translateY(-20%);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+@keyframes move6 {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        // -webkit-transform: rotate(0deg);
+        // transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-10%);
+        transform: translateY(-10%);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+}
+
+@media only screen and (width <= 655px) {
+    .image .icon.icon1{
+        width: 18%;
+        height: 33%;
+        right: -6px;
+    }
+    .image .icon.icon2{
+        width: 18%;
+        height: 33%;
+    }
+    .image .icon.icon3{
+        width: 18%;
+        height: 33%;
+        // bottom: ;
+        left:10px;
+    }
+}

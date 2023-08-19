@@ -1,17 +1,28 @@
-import { useContext } from "react"
-import { GlobalStateContext } from './context/'
+import { Home, Dashboard, CreateReward, CreateDeal, Rewards, RewardCustomer, TransactionPage, Purchases, OfferDetails, Register, Tokenomics } from './pages';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import "./scss/index.scss";
 
 function App() {
-
-  const { globalData } = useContext(GlobalStateContext);
-  console.log(globalData.primaryColor);
-
   return (
-    <>
-      <h1 className={`text-3xl font-light text-${ globalData.primaryColor }-500 underline`}>
-        Hello world! 
-      </h1>
-    </>
+    <Router>
+      <div className='relative sm:p-8 p-4 bg-[#13131a] min-h-screen flex flex-row items-start justify-center'>
+          <Toaster position='top-center' />
+          <Routes>
+            <Route path='/' exact element={<Home />} />
+            <Route path='/register' exact element={<Register />} />
+            <Route path='/dashboard' exact element={<Dashboard />} />
+            <Route path='/create-reward' exact element={<CreateReward />} />
+            <Route path='/create-deal' exact element={<CreateDeal />} />
+            <Route path='/rewards' exact element={<Rewards />} />
+            <Route path='/transactions' exact element={<TransactionPage />} />
+            <Route path='/reward-customer' exact element={<RewardCustomer />} />
+            <Route path='/purchases' exact element={<Purchases />} />
+            <Route path='/tokenomics' exact element={<Tokenomics />} />
+            <Route path='/offer-details/:id' exact element={<OfferDetails />} />
+          </Routes>
+      </div>
+    </Router>
   )
 }
 

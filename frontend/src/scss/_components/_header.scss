@@ -1,0 +1,189 @@
+@use '../_partials/mixins' as *;
+@use '../_partials/variables' as *;
+
+.Header {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    > * {
+        display: flex;
+        align-items: center;
+    }
+    .HeaderNav {
+        color: $BrightGray;
+        gap: 60px;
+        @include BodyTypography;
+        .HeaderNavList {
+            gap: 60px;
+            display: flex;
+            list-style-type: none;
+            li {
+                cursor: pointer;
+            }
+        }
+    }
+    .CTAButton{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        gap: 3px;
+        height: fit-content;
+        width: fit-content;
+        border-radius: 27.5px;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        @include CTAButtonTypography;
+        cursor: pointer;
+        .AnimatedPulseFront {
+            width: 10px;
+            height: 10px;
+            background-color: $MiddleBlueGreen;
+            border-radius: 50%;
+            filter: blur(2px);
+            position: relative;
+            left: 10px;
+        }
+        .AnimatedPulseBack {
+            position: relative;
+            transform: translateX(-8px);
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            animation: pulse-animation 1.5s infinite;
+        }
+        :hover{
+            .AnimatedPulseFront{
+                background-color: #09121D;
+            }
+            .AnimatedPulseBack{
+                animation: pulse-animation2 1.5s infinite;
+            }
+        }
+    }
+}
+
+.NavbarToggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    .ToggleLine {
+        transition: $Transition-03;
+        height: 0.5px;
+        background-color: $BrightGray;
+        &:not(:nth-child(2)) {
+            width: 25px;
+        }
+        &:nth-child(2) {
+            width: 17.42px;
+        }
+    }
+}
+
+.ToggleActive .ToggleLine {
+    &:first-child {
+        transition: $Transition-03;
+        transform: rotate(45deg) translate(8px, 7px);
+    }
+    &:nth-child(2) {
+        transition: $Transition-03;
+        opacity: 0;
+    }
+    &:last-child {
+        transition: $Transition-03;
+        transform: rotate(-45deg) translate(8px, -7px);;
+    }
+}
+
+.brandLogo{
+    width: 30px;
+    height: 30px;
+}
+.brandLogoSpanHeader{
+    color: white;
+    font-family: Poppins;
+    font-weight: 900;
+    font-size: 25px;
+    letter-spacing: 3px;
+}
+/****** RESPONSIVE TOGGLE *****/
+
+@media only screen and (width <= 655px) {
+    .NavbarToggle {
+        display: flex;
+        z-index: 2;
+        cursor: pointer;
+    }
+    .HeaderNavList {
+        position: absolute !important;
+        left: 0;
+        background-color: $CetaceanBlue;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        transform: translateY(-100%);
+        transition: $Transition-03;
+        z-index: 1;
+    }
+    .brandLogo{
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.NavActive {
+    transform: translateX(0%);
+}
+
+/****** KEYFRAMES ******/
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px $MiddleBlueGreen;
+    }
+    50% {
+        box-shadow: 0 0 0 7px $MiddleBlueGreen;
+        filter: blur(7px);
+    }
+    100% {
+        box-shadow: 0 0 0 0px $MiddleBlueGreen;
+    }
+}
+@keyframes pulse-animation2 {
+    0% {
+        box-shadow: 0 0 0 0px #09121D;
+    }
+    50% {
+        box-shadow: 0 0 0 7px #09121D;
+        filter: blur(7px);
+    }
+    100% {
+        box-shadow: 0 0 0 0px #09121D;
+    }
+}
+
+// .filter-white{
+//     filter: brightness(0) invert(1);
+// }
+

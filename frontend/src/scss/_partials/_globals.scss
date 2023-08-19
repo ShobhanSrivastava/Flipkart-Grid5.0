@@ -1,0 +1,14 @@
+@use './variables' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    &:is(&::after, &::before, *) {
+        box-sizing: border-box;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: $RichBlack;
+}

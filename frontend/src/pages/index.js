@@ -1,0 +1,11 @@
+export { default as Dashboard } from './Dashboard';
+export { default as CreateReward } from './CreateReward';
+export { default as CreateDeal } from './CreateDeal';
+export { default as Rewards } from './Rewards';
+export { default as TransactionPage } from './TransactionPage';
+export { default as RewardCustomer } from './RewardCustomer';
+export { default as Purchases } from './Purchases';
+export { default as Home } from './Home';
+export { default as Register } from './Register';
+export { default as OfferDetails } from './OfferDetails';
+export { default as Tokenomics } from './Tokenomics';
