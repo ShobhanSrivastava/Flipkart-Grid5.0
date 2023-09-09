@@ -4,7 +4,7 @@ import { useContract, useAddress } from '@thirdweb-dev/react';
 export const GlobalStateContext = createContext();
 
 const GlobalStateProvider = ({ children }) => {
-    const { contract } = useContract('0xa34bDdf6156D0377B9aBb2A3275BF484780F3B62');
+    const { contract } = useContract('0xf71A218C40ad49B64De20420239eE7339aeCe705');
     const address = useAddress();
 
     const [loading, setIsLoading] = useState(false);

@@ -26,6 +26,7 @@ const Sidebar = () => {
 
     async function fetchUserRole() {
         const user = await contract.call('getUser', [address]);
+        // console.log(user);
         setRole(user[4]);
     }
 

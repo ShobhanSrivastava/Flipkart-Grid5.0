@@ -1,9 +1,9 @@
-import { HamburgerIcon } from '@chakra-ui/icons';
 import { Button, FormField, Navbar, Sidebar, Loader } from '../components';
 import { exclusive } from '../assets';
 import { useContext, useEffect, useState } from 'react';
 import { GlobalStateContext } from '../context';
 import { ConnectWallet } from '@thirdweb-dev/react';
+import { useNavigate } from 'react-router-dom';
 
 function CreateDeal() {
 
@@ -34,15 +34,18 @@ function CreateDeal() {
         console.log(form);
     };
 
+    const navigate = useNavigate('/rewards');
+
     async function handleSubmit(e) {
         e.preventDefault();
         setIsLoading(true);
         const data = await contract.call('createOffer', [
-            form.name, form.description, form.value, form.price, form.quantity, form.image, new Date(form.startDate).getTime(), new Date(form.endDate).getTime(), true
+            form.name, form.description, form.value, form.price, form.quantity, form.image, Math.floor(new Date(form.startDate).getTime()/1000) + 60, Math.floor(new Date(form.endDate).getTime()/1000) + 60, true
         ]);
         console.log(data);
         setForm(defaultForm);
         setIsLoading(false);
+        navigate('/rewards');
     }
 
     return (
@@ -113,7 +116,7 @@ function CreateDeal() {
                                 <FormField 
                                     labelName="Start Date *"
                                     placeholder="Start Date"
-                                    inputType="date"
+                                    inputType="datetime-local"
                                     value={form.startDate}
                                     handleChange={(e) => handleFormFieldChange('startDate', e)}
                                 />        
@@ -121,7 +124,7 @@ function CreateDeal() {
                                 <FormField 
                                     labelName="End Date *"
                                     placeholder="End Date"
-                                    inputType="date"
+                                    inputType="datetime-local"
                                     value={form.endDate}
                                     handleChange={(e) => handleFormFieldChange('endDate', e)}
                                 />

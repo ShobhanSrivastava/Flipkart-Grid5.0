@@ -5,13 +5,13 @@ export const navlinks = [
         name: 'All Offers',
         imgUrl: buy,
         link: '/rewards',
-        roles: '*'
+        roles: '*' // For all users
     },
     {
         name: 'Reward Loyal Customers',
         imgUrl: gift,
         link: '/reward-customer',
-        roles: 'partner'
+        roles: 'partner' // For partners
     },
     // {
     //     name: 'My Purchases',
@@ -31,12 +31,12 @@ export const navlinks = [
         link: '/create-deal',
         roles: 'partner'
     },
-    {
-        name: 'Track your progress',
-        imgUrl: trackProgress,
-        link: '/track-progress',
-        roles: 'customer'
-    },
+    // {
+    //     name: 'Track your progress',
+    //     imgUrl: trackProgress,
+    //     link: '/track-progress',
+    //     roles: 'customer'
+    // },
     {
         name: 'Transactions',
         imgUrl: history,
@@ -50,7 +50,7 @@ export const navlinks = [
         roles: 'admin'
     },
     {
-        name: 'Tokenomics',
+        name: 'Learn to Earn',
         imgUrl: info,
         link: '/tokenomics',
         roles: '*'

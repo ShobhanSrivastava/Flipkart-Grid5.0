@@ -2,6 +2,7 @@ import { Navbar, Sidebar, Button, FormField, Loader } from '../components';
 import { useContext, useEffect, useState } from 'react';
 import { GlobalStateContext } from '../context';
 import { ConnectWallet } from '@thirdweb-dev/react';
+import { useNavigate } from 'react-router-dom';
 
 function CreateReward() {
     const { address, contract, loading, setIsLoading, setIsActive } = useContext(GlobalStateContext);
@@ -31,6 +32,8 @@ function CreateReward() {
         console.log(form);
     };
 
+    const navigate = useNavigate();
+
     async function handleSubmit(e) {
         e.preventDefault();
         setIsLoading(true);
@@ -40,6 +43,7 @@ function CreateReward() {
         console.log(data);
         setForm(defaultForm);
         setIsLoading(false);
+        navigate('/rewards');
     }
 
     return (

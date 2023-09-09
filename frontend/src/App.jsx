@@ -1,7 +1,6 @@
-import { Home, Dashboard, CreateReward, CreateDeal, Rewards, RewardCustomer, TransactionPage, Purchases, OfferDetails, Register, Tokenomics } from './pages';
+import { Home, Dashboard, CreateReward, CreateDeal, Rewards, RewardCustomer, TransactionPage, Purchases, OfferDetails, Register, Tokenomics, Ecommerce } from './pages';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import "./scss/index.scss";
 
 function App() {
   return (
@@ -20,6 +19,7 @@ function App() {
             <Route path='/purchases' exact element={<Purchases />} />
             <Route path='/tokenomics' exact element={<Tokenomics />} />
             <Route path='/offer-details/:id' exact element={<OfferDetails />} />
+            <Route path='/flipkart' exact element={<Ecommerce />} />
           </Routes>
       </div>
     </Router>

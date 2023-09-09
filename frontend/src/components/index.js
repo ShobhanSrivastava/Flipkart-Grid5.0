@@ -9,3 +9,5 @@ export { default as ShowOffers } from './ShowOffers'
 export { default as Loader } from './Loader';
 export { default as Pagination } from './screens/dashboard/Pagination'
 export { default as Transactions } from './screens/dashboard/Transactions'
+export { default as Container } from './Container'
+export { default as FaqSection } from './FaqSection'

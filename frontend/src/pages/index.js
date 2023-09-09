@@ -9,3 +9,4 @@ export { default as Home } from './Home';
 export { default as Register } from './Register';
 export { default as OfferDetails } from './OfferDetails';
 export { default as Tokenomics } from './Tokenomics';
+export { default as Ecommerce } from './Ecommerce';

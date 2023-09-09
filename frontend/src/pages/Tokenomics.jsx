@@ -8,7 +8,7 @@ function Tokenomics() {
     const { address, setIsActive } = useContext(GlobalStateContext);
 
     useEffect(() => {
-        setIsActive('Tokenomics');
+        setIsActive('Learn to Earn');
     }, []);
 
     return (
@@ -29,7 +29,7 @@ function Tokenomics() {
                             <li>You can earn 2 Club Coins(for non-plus customers) and 4 Club Coins(for plus customers) for every hundred rupees spent on Flipkart Ecommerce Platform. Only a maximum of 50 Club Coins(for non-plus customers) and 100 Club Coins(for plus customers) can be availed per transaction.  </li>
                             <li>On each successful referral on Rewards Club Platform you will be credited with 25 Club Coins.</li>
                             <li>Earn 10 Club Coins on each reward/exclusive deal share on your social media handles. Only 1 post per reward/deal is eligible for reward. </li>
-                            <li>You can also earn Club Coins by playing games on the Rewards Club Platform. </li>
+                            <li>[Coming Soon!] You can also earn Club Coins by playing games on the Rewards Club Platform. </li>
                         </ul>
                         <span className="text-2xl font-bold">Partners</span>
                         <ul className="list-disc px-6">

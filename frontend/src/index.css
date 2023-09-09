@@ -5,3 +5,1124 @@
 * {
   font-family: 'Poppins', sans-serif;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Cairo");
+/****** COLORS ******/
+/****** TRANSITIONS ******/
+* {
+  margin: 0;
+  padding: 0;
+}
+*:is(*::after, *::before, *) {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #13131A;
+}
+
+/****** WIDE - 1440px+ ******/
+@media only screen and (1441px <= width) {
+  .Header {
+    padding: 30px 0;
+    justify-content: space-evenly;
+  }
+  .MainContainer {
+    width: 1110px;
+    margin: 0 auto;
+  }
+  .HeroSection {
+    flex-direction: column;
+  }
+  .TopContent {
+    gap: 150px;
+  }
+  .TopContent > .LeftSideContent {
+    padding: 37px 0;
+  }
+  .AnalyticsSection,
+  .AppSection,
+  .SellSection {
+    gap: 150px;
+  }
+}
+/****** DESKTOP - 1025px --> 1440px ******/
+@media only screen and (1025px <= width <= 1440px) {
+  .Header {
+    justify-content: space-between;
+    padding: 30px 150px;
+  }
+  .MainContainer {
+    padding: 0 150px;
+  }
+  .HeroSection {
+    flex-direction: column;
+  }
+  .TopContent {
+    gap: 150px;
+  }
+  .TopContent > .LeftSideContent {
+    padding: 72px 0;
+  }
+  .AnalyticsSection,
+  .AppSection,
+  .SellSection {
+    gap: 150px;
+  }
+}
+/****** TABLET - 745px --> 1024px ******/
+@media only screen and (745px <= width <= 1024px) {
+  .Header {
+    justify-content: space-between;
+    padding: 32px;
+  }
+  .MainContainer {
+    padding: 0 32px;
+  }
+  .HeroSection {
+    flex-direction: column;
+  }
+  .TopContent {
+    gap: 150px;
+  }
+  .TopContent > .LeftSideContent {
+    padding: 37px 0;
+  }
+  .TopContent .Buttons {
+    flex-direction: column;
+  }
+  .AnalyticsSection,
+  .AppSection,
+  .SellSection {
+    gap: 55px;
+  }
+  .MiddleFooterColumn,
+  .RightFooterColumn {
+    position: relative;
+    top: 50%;
+  }
+}
+/****** TABLET (SMALL) - 376px --> 744px ******/
+@media only screen and (376px <= width <= 744px) {
+  .Header {
+    justify-content: space-between;
+    padding: 24px;
+  }
+  .MainContainer {
+    padding: 0 24px;
+  }
+  .BackgroundBlurObject1 {
+    left: unset !important;
+    right: 0;
+  }
+  .HeroSection {
+    flex-direction: column;
+  }
+  .TopContent {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+  }
+  .TopContent .LeftSideContent {
+    align-items: center;
+    text-align: center;
+  }
+  .TopContent .LeftSideContent .Buttons {
+    flex-direction: column;
+  }
+  .AnalyticsSection,
+  .AppSection,
+  .SellSection {
+    gap: 55px;
+  }
+  .Footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+}
+/****** MOBILE - 375px ******/
+@media only screen and (width <= 375px) {
+  .Header {
+    justify-content: space-between;
+    padding: 24px;
+  }
+  .MainContainer {
+    padding: 0 24px;
+  }
+  .BackgroundBlurObject1 {
+    left: unset !important;
+    right: 0;
+  }
+  .AppSection {
+    flex-direction: column-reverse;
+  }
+  .HeroSection,
+  .AnalyticsSection,
+  .SellSection {
+    flex-direction: column;
+  }
+  .TopContent {
+    gap: 20px;
+    flex-direction: column-reverse;
+  }
+  .TopContent .LeftSideContent {
+    align-items: center;
+    text-align: center;
+  }
+  .TopContent .LeftSideContent .Buttons {
+    flex-direction: column;
+  }
+  .Footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+}
+/****** OUTFIT - 700 BOLD ******/
+@font-face {
+  font-family: Outfit;
+  font-weight: 700;
+  font-style: normal;
+  src: url(@/fonts/Outfit/Outfit-Bold.woff) format("woff"), url(@/fonts/Outfit/Outfit-Bold.woff2) format("woff2");
+  font-display: swap;
+}
+/****** OUTFIT - 600 SEMIBOLD ******/
+@font-face {
+  font-family: Outfit;
+  font-weight: 600;
+  font-style: normal;
+  src: url(@/fonts/Outfit/Outfit-SemiBold.woff) format("woff"), url(@/fonts/Outfit/Outfit-SemiBold.woff2) format("woff2");
+  font-display: swap;
+}
+/****** OUTFIT - 400 REGULAR ******/
+@font-face {
+  font-family: Outfit;
+  font-weight: 400;
+  font-style: normal;
+  src: url(@/fonts/Outfit/Outfit-Regular.woff) format("woff"), url(@/fonts/Outfit/Outfit-Regular.woff2) format("woff2");
+  font-display: swap;
+}
+/****** ROBOTO - 400 REGULAR ******/
+@font-face {
+  font-family: Regular;
+  font-weight: 400;
+  font-style: normal;
+  src: url(@/fonts/Roboto/Roboto-Regular.woff) format("woff"), url(@/fonts/Roboto/Roboto-Regular.woff2) format("woff2");
+  font-display: swap;
+}
+.Header {
+  position: sticky;
+  top: 0;
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+.Header > * {
+  display: flex;
+  align-items: center;
+}
+.Header .HeaderNav {
+  color: #ebebeb;
+  gap: 60px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27.5px;
+}
+.Header .HeaderNav .HeaderNavList {
+  gap: 60px;
+  display: flex;
+  list-style-type: none;
+}
+.Header .HeaderNav .HeaderNavList li {
+  cursor: pointer;
+}
+.Header .CTAButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  gap: 3px;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 27.5px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27.5px;
+  color: #ebebeb;
+  cursor: pointer;
+}
+.Header .CTAButton .AnimatedPulseFront {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(244, 63, 94);
+  border-radius: 50%;
+  filter: blur(2px);
+  position: relative;
+  left: 10px;
+}
+.Header .CTAButton .AnimatedPulseBack {
+  position: relative;
+  transform: translateX(-8px);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  animation: pulse-animation 1.5s infinite;
+}
+.Header .CTAButton :hover .AnimatedPulseFront {
+  background-color: #09121D;
+}
+.Header .CTAButton :hover .AnimatedPulseBack {
+  animation: pulse-animation2 1.5s infinite;
+}
+
+.NavbarToggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.NavbarToggle .ToggleLine {
+  transition: 0.3s all ease-in;
+  height: 0.5px;
+  background-color: #ebebeb;
+}
+.NavbarToggle .ToggleLine:not(:nth-child(2)) {
+  width: 25px;
+}
+.NavbarToggle .ToggleLine:nth-child(2) {
+  width: 17.42px;
+}
+
+.ToggleActive .ToggleLine:first-child {
+  transition: 0.3s all ease-in;
+  transform: rotate(45deg) translate(8px, 7px);
+}
+.ToggleActive .ToggleLine:nth-child(2) {
+  transition: 0.3s all ease-in;
+  opacity: 0;
+}
+.ToggleActive .ToggleLine:last-child {
+  transition: 0.3s all ease-in;
+  transform: rotate(-45deg) translate(8px, -7px);
+}
+
+.brandLogo {
+  width: 30px;
+  height: 30px;
+}
+
+.brandLogoSpanHeader {
+  color: white;
+  font-family: Poppins;
+  font-weight: 900;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+/****** RESPONSIVE TOGGLE *****/
+@media only screen and (width <= 655px) {
+  .NavbarToggle {
+    display: flex;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .HeaderNavList {
+    position: absolute !important;
+    left: 0;
+    background-color: #010922;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    transform: translateY(-100%);
+    transition: 0.3s all ease-in;
+    z-index: 1;
+  }
+  .brandLogo {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+  }
+}
+.NavActive {
+  transform: translateX(0%);
+}
+
+/****** KEYFRAMES ******/
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgb(244, 63, 94);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgb(244, 63, 94);
+    filter: blur(7px);
+  }
+  100% {
+    box-shadow: 0 0 0 0px rgb(244, 63, 94);
+  }
+}
+@keyframes pulse-animation2 {
+  0% {
+    box-shadow: 0 0 0 0px #09121D;
+  }
+  50% {
+    box-shadow: 0 0 0 7px #09121D;
+    filter: blur(7px);
+  }
+  100% {
+    box-shadow: 0 0 0 0px #09121D;
+  }
+}
+.MainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.MainContainer > * {
+  display: flex;
+}
+
+.TopContent {
+  display: flex;
+}
+
+button {
+  cursor: pointer;
+}
+
+.HeroSection .TopContent > .LeftSideContent {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+.HeroSection .TopContent > .LeftSideContent .SiteHeadingOne {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 110%;
+  color: #ebebeb;
+}
+.HeroSection .TopContent > .LeftSideContent .SiteHeroParagraph {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27.5px;
+  color: #ebebeb;
+}
+.HeroSection .TopContent > .LeftSideContent .Buttons {
+  display: flex;
+  gap: 30px;
+}
+.HeroSection .TopContent > .LeftSideContent .Buttons .CTAButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 60px;
+  width: 225.25px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: linear-gradient(90deg, rgb(244, 63, 94), rgb(168, 85, 247));
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27.5px;
+  color: #ebebeb;
+}
+.HeroSection .TopContent > .LeftSideContent .Buttons .SellNFTsCTAButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 60px;
+  width: 225.25px;
+  border-radius: 30px;
+  outline: none;
+  border: 1px solid rgb(244, 63, 94);
+  background-color: transparent;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27.5px;
+  color: #ebebeb;
+}
+.HeroSection .TrustedPartnersContent {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 0;
+}
+.HeroSection .TrustedPartnersContent .TrustedPartnersTitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27.5px;
+  color: #ebebeb;
+}
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-120%);
+  }
+}
+.HeroSection .logos {
+  overflow: hidden;
+  padding: 20px 0;
+  white-space: nowrap;
+  position: relative;
+}
+.HeroSection .logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+.HeroSection .logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+.HeroSection .logos-slide img {
+  filter: brightness(0) invert(1);
+  display: inline-block;
+  height: 30px;
+  margin: 0 40px;
+}
+.HeroSection .TopContent > .RightSideContent > .RightSideImg {
+  height: 100%;
+  width: 100%;
+}
+.HeroSection .TopContent > .RightSideContent > .RightSideImg > .animation1 {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.PricingButton,
+.SellButton,
+.AppButton,
+.CTAButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 60px;
+  width: 225.25px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: linear-gradient(90deg, rgb(244, 63, 94), rgb(168, 85, 247));
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27.5px;
+  color: #ebebeb;
+}
+
+h2 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 1.1071rem + 3.2143vw, 4rem);
+  line-height: 110%;
+  color: #ebebeb;
+}
+
+.SubtitleContent {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27.5px;
+  letter-spacing: 10%;
+  text-transform: uppercase;
+  color: #ebebeb;
+}
+
+.AnalyticsContent,
+.AppContent,
+.SellContent {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27.5px;
+  color: #ebebeb;
+}
+
+.LeftSideContent,
+.RightSideContent {
+  flex: 1 1 0px;
+}
+
+.TestimonialSection {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+}
+
+.CTASection {
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.AnalyticsImg,
+.AppImg,
+.SellImg {
+  margin: 20px 0;
+  border-radius: 15px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+
+.AnalyticsSection,
+.AppSection,
+.SellSection {
+  align-items: center;
+}
+
+.AccentColor {
+  color: rgb(244, 63, 94);
+}
+
+.BackgroundBlurObject1 {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  left: -162px;
+  top: -486px;
+  background: linear-gradient(90deg, rgb(244, 63, 94), rgb(168, 85, 247));
+  opacity: 0.7;
+  filter: blur(70.5px);
+  z-index: -1;
+}
+
+.BackgroundBlurObject3 {
+  position: fixed;
+  width: 338px;
+  height: 220px;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(290deg, rgb(244, 63, 94), rgb(168, 85, 247));
+  opacity: 0.7;
+  filter: blur(90.5px);
+  z-index: -1;
+}
+
+.img_main {
+  animation: move4 5s infinite linear;
+}
+
+.image {
+  position: relative;
+}
+
+.image .icon {
+  position: absolute;
+}
+
+.image .icon.icon1 {
+  top: 34%;
+  right: -58px;
+}
+
+.image .icon.icon1 img {
+  width: 100%;
+  height: 100%;
+  -webkit-animation: move5 5s infinite linear;
+}
+
+.image .icon.icon2 {
+  top: 24%;
+  left: 20%;
+}
+
+.icon2 img {
+  width: 100%;
+  height: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-animation: move3 5s infinite linear;
+}
+
+.image .icon.icon3 {
+  bottom: -20px;
+  left: -40px;
+}
+
+.icon3 img {
+  width: 100%;
+  height: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-animation: move5 5s infinite linear;
+}
+
+.img_slider {
+  position: relative;
+}
+
+.img_slider_div {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
+  overflow: hidden;
+}
+
+.rocket {
+  width: 75%;
+  -webkit-animation: move6 5s infinite linear normal forwards;
+}
+
+.man {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-height: 100%;
+}
+
+@keyframes move3 {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(20%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes move2 {
+  0% {
+    transform: rotate(1deg) translate(2px, 2px);
+  }
+  50% {
+    transform: rotate(-1deg) translate(-2px, -2px);
+  }
+  100% {
+    transform: rotate(1deg) translate(2px, 2px);
+  }
+}
+@keyframes move4 {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-10%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes move5 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes move6 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media only screen and (width <= 655px) {
+  .image .icon.icon1 {
+    width: 18%;
+    height: 33%;
+    right: -6px;
+  }
+  .image .icon.icon2 {
+    width: 18%;
+    height: 33%;
+  }
+  .image .icon.icon3 {
+    width: 18%;
+    height: 33%;
+    left: 10px;
+  }
+}
+.TestimonialImage {
+  position: relative;
+  transform: translateY(50%);
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.TestimonialBody {
+  border-radius: 25px;
+  padding: 50px;
+}
+.TestimonialBody .TestimonialQuote {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27.5px;
+  color: #ebebeb;
+  padding-top: 50px;
+  padding-bottom: 38.62px;
+}
+.TestimonialBody .TestimonialName {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ebebeb;
+}
+
+.Footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 0;
+}
+.Footer > * {
+  display: flex;
+}
+
+.FooterMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style-type: none;
+}
+.FooterMenu li {
+  cursor: pointer;
+}
+
+.NewsletterSignUp {
+  flex-direction: column;
+  gap: 15px;
+}
+.NewsletterSignUp .NewsletterSignUpText {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27.5px;
+  color: #ebebeb;
+}
+
+.NewsletterSignUpForm {
+  display: flex;
+  gap: 15px;
+}
+
+.MiddleFooterColumn {
+  gap: 60px;
+}
+
+.NewsletterSignUpInput {
+  background: rgb(244, 63, 94);
+  border-radius: 25px;
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 256.66px;
+  padding-left: 28.48px;
+  cursor: pointer;
+}
+.NewsletterSignUpInput::-moz-placeholder {
+  color: #13131A;
+  opacity: 1;
+}
+.NewsletterSignUpInput::placeholder {
+  color: #13131A;
+  opacity: 1;
+}
+
+.FooterMenuTitle {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: lowercase;
+  color: #ebebeb;
+}
+
+.NewsletterSignUpButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 50px;
+  width: 116.04px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: linear-gradient(90deg, rgb(244, 63, 94), rgb(168, 85, 247));
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #ebebeb;
+  cursor: pointer;
+}
+
+.FooterItem-1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ebebeb;
+}
+
+.FooterItem-2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ebebeb;
+}
+
+.FooterItem-3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ebebeb;
+}
+
+.FooterItem-4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ebebeb;
+}
+
+.filter-white {
+  filter: brightness(0) invert(1);
+}
+
+.LeftFooterColumn {
+  display: flex;
+  align-items: center;
+}
+
+.brandLogoSpanFooter {
+  font-family: Poppins;
+  color: white;
+  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: 3px;
+  top: 50%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.gameBox {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameTile {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  background-color: #292929;
+  border-radius: 50px;
+}
+
+#repeatButton {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background: url(https://andyhoffman.codes/random-assets/img/slots/repeat.png) transparent 0 0 no-repeat;
+  background-size: cover;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  animation: 6s linear infinite spin;
+}
+
+.titles {
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 3%;
+}
+
+.icons {
+  width: 128px;
+  height: 564px;
+  overflow: hidden;
+  background: #fff url(https://andyhoffman.codes/random-assets/img/slots/sprite5.png) repeat-y;
+  will-change: backgroundPosition;
+  transition: 0.3s background-position ease-in-out;
+  padding: 0 80px;
+  transform: translateZ(0);
+}
+
+.icons:nth-child(2) {
+  margin: 0 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.spinner-container {
+  overflow: hidden;
+  height: 632px;
+  padding: 2em;
+  transform: translate(-50%, -50%) scale(0.62, 0.62);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  transition: 0.3s transform;
+}
+
+.app-wrap.winner-false {
+  animation: linear 1s spin;
+}
+
+.spinner-container::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 180px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30px;
+  left: 30px;
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.gradient-fade {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  bottom: 32px;
+  left: 32px;
+  background: linear-gradient(to bottom, rgb(64, 64, 64) 0%, rgba(64, 64, 64, 0) 7%, rgba(64, 64, 64, 0) 93%, rgb(64, 64, 64) 100%);
+}
+
+@media screen and (max-width: 1000px) {
+  .spinner-container {
+    transform: translate(-50%, -50%) scale(0.55, 0.55);
+  }
+}
+@media screen and (max-width: 500px) {
+  .spinner-container {
+    transform: translate(-50%, -50%) scale(0.4, 0.4);
+  }
+}
+.pagination {
+  position: absolute;
+  bottom: 10px;
+}
+
+.transaction-table {
+  position: relative;
+}
+
+tbody,
+thead,
+th,
+tr,
+td {
+  padding: 8px;
+}
+
+td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+thead tr {
+  white-space: nowrap;
+}
+
+.page-item {
+  max-width: 5px;
+}
+
+@media only screen and (width <= 655px) {
+  .transactionBlock {
+    display: flex;
+    flex-direction: column;
+  }
+  .transaction-table div {
+    overflow: scroll;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}/*# sourceMappingURL=index.css.map */

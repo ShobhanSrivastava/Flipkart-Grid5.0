@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react'
-import { ThirdwebProvider, ChainId, paperWallet, metamaskWallet, localWallet, magicLink } from '@thirdweb-dev/react';
+import { ThirdwebProvider, ChainId, paperWallet, metamaskWallet, localWallet } from '@thirdweb-dev/react';
 import ReactDOM from 'react-dom/client'
 import { GlobalStateProvider } from './context/';
 import App from './App.jsx'

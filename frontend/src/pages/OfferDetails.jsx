@@ -5,6 +5,7 @@ import { daysLeft } from '../utils';
 import { CountBox } from '../components';
 import { GlobalStateContext } from '../context';
 import { ConnectWallet } from '@thirdweb-dev/react';
+import { toast } from 'react-hot-toast';
 
 function OfferDetails() {
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ function OfferDetails() {
     setIsLoading(true);
     await contract.call('buyOffer', [ state.id ]);
     setIsLoading(false);
+    toast.success('Offer claimed');
   }
 
   return (
@@ -62,9 +64,9 @@ function OfferDetails() {
                     <h4 className="font-epilogue font-semibold text-[18px] text-white uppercase">Seller</h4>
                     <div className='mt-[20px] flex flex-row items-center flex-wrap gap-[14px]'>
                       <div className='w-[52px] h-[52px] flex items-center justify-center rounded-full bg-[#2c2f32] cursor-pointer'>
-                        <img 
+                        {/* <img 
                           // src={thirdweb} 
-                          alt="user" className="w-[60%] h-[60%] object-contain"/>
+                          alt="user" className="w-[60%] h-[60%] object-contain"/> */}
                       </div>
                       <div>
                         <h4 className='font-epilogue font-semibold text-2xl text-white break-all'>{state.businessName}</h4>
